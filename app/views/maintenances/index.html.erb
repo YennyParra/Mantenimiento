@@ -1,0 +1,25 @@
+<p style="color: green"><%= notice %></p>
+<div class= "container">
+<h1>Mantenimientos</h1>
+
+<div id="maintenances">
+<table class= "table table-striped">
+<thead>
+<tr>
+<th scope="col">id</th>
+<th scope="col">tipo Motor</th> 
+<th scope="col">tipo Mantenimiento</th>
+<th scope="col">Nombre Motor</th>
+<th scope="col">Foto</th>
+</tr>
+</thead>
+<tbody>
+  <% @maintenances.each do |maintenance| %>
+    <%= render maintenance %>
+    <p>
+      <%= link_to "Show this maintenance", maintenance %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New maintenance", new_maintenance_path %>

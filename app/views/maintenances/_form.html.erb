@@ -1,0 +1,71 @@
+<%= form_with(model: maintenance) do |form| %>
+  <% if maintenance.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(maintenance.errors.count, "error") %> prohibited this maintenance from being saved:</h2>
+
+      <ul>
+        <% maintenance.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :type_machine, style: "display: block" %>
+    <%= form.text_field :type_machine %>
+  </div>
+
+  <div>
+    <%= form.label :Type_maintenance, style: "display: block" %>
+    <%= form.text_field :Type_maintenance %>
+  </div>
+
+  <div>
+    <%= form.label :name_machine, style: "display: block" %>
+    <%= form.text_field :name_machine %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+ <div > 
+  <%= form.label :tipoMantenimiento, style: "display: block" %>
+   <select id="tipoMantenimiento" name="tipoMantenimiento" >
+            <option value="Preventivo">Preventivo</option>
+            <option value="Correctivo">Correctivo</option>
+</select>
+   </div>
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :machines_id, style: "display: block" %>
+    <%= form.text_field :machines_id %>
+  </div>
+
+  <div>
+    <%= form.label :cities_id, style: "display: block" %>
+    <%= form.text_field :cities_id %>
+  </div>
+
+    <div>
+      <%= form.label :material_ids, style: "display: block", class: "form-group" %>
+      <div class="row">
+      <%= form.collection_check_boxes(:material_ids, @materials, :id, :name) do |b|%>
+      <div class="col-md-2">
+      <span class="w100 form-control my-2"><%= b.label { b.check_box + " " + b.text }
+      %></span>
+      </div>
+      <% end %>
+      </div>
+      </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+.image {
+    background-color: transparent;
+    background-image: url('Motor');
+    background-repeat: repeat;
+    background-position: right top;
+}
+
+.p {
+    font-size: 25;
+}

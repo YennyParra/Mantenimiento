@@ -45,12 +45,12 @@
 
   <div>
     <%= form.label :machines_id, style: "display: block" %>
-    <%= form.text_field :machines_id %>
+    <%= form.collection_select :machines_id, @machines, :id, :name %>
   </div>
 
   <div>
-    <%= form.label :cities_id, style: "display: block" %>
-    <%= form.text_field :cities_id %>
+    <%= form.label :city_id, "Ciudad", style: "display: block" %>
+    <%= form.collection_select :city_id, @cities, :id, :nombre %>
   </div>
 
     <div>

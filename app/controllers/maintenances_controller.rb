@@ -16,6 +16,8 @@ class MaintenancesController < ApplicationController
   # GET /maintenances/new
   def new
     @maintenance = Maintenance.new
+    @machines = Machine.all
+    @cities = City.all
   end
 
   # GET /maintenances/1/edit
